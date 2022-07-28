@@ -1,0 +1,47 @@
+<style type="text/css">
+	.a
+	{
+		background: skyblue;
+		border-radius: 10px;
+		margin-bottom:10px ;
+	}
+</style>
+
+
+<div class="container">
+	<div class="row"style="margin: 20px;">
+		<div class="col-sm-3"></div>
+			<div class="col-sm-6 a">
+				
+				<%=form_with model: [ @gender, @gender.clothes.new ] do |form| %>
+
+                         <%=form.label :name %>
+                         <%= form.text_field :name ,class:"form-control"%>
+  
+                          <%=form.label :size %>  
+                           <%= form.text_field :size ,class:"form-control"%>
+
+                           <%=form.label :price%>  
+                           <%=form.text_field :price,class:"form-control"%>
+
+                             <%=form.label :brand%>  
+                           <%=form.text_field :brand,class:"form-control"%>
+
+                           <%=form.label :quantity%>  
+                           <%=form.text_field :quantity, class:"form-control"%>
+
+                           	 <%=form.label :gender_image%>  
+                           <%=form.file_field :gender_image, class:"form-control"%>
+
+                           <br>
+  
+                           <%=form.submit "Update",class:"btn btn-info mb-4"%>
+                           
+                        <% end %>
+
+
+
+			</div>
+				<div class="col-sm-3"></div>
+	</div>
+</div>

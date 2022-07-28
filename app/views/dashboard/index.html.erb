@@ -1,0 +1,36 @@
+
+<div class="container">
+	<div class="row" style="margin: 20px;">
+	
+		<div class="col-sm-3">
+
+			<%=link_to "Add Category",new_gender_path,class:"btn btn-success"%>
+
+
+			<i class="fa fa-camera-retro"></i>
+		</div>
+	
+	</div>
+	<div class="row" style="margin: 20px;">
+			<%@gender.each do |gen|%>
+		<div class="col-sm-4 mt-2">
+				<div class="card" style="width: 18rem;">
+
+			<%= image_tag(gen.gender_image) if gen.gender_image.attached?%>
+                      <div class="card-body">
+                      <h5 class="card-title"><%=gen.name%></h5>
+                     
+
+       <%=link_to "SHOW",gender_path(gen.id),class:"btn btn-success"%>&nbsp;&nbsp;&nbsp;&nbsp;
+        <%=link_to "Edit", edit_gender_path(gen.id),class:"btn btn-success"%>&nbsp;&nbsp;&nbsp;
+            <%=link_to "DELETE", gender_path(gen.id),data: { turbo_method: :delete ,turbo_confirm: "Are you Soure ?"},class:"btn btn-danger"%>
+                        </div>
+                      </div>
+		</div>
+		<%end%>
+	</div>
+</div>
+
+
+
+

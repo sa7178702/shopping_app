@@ -1,0 +1,18 @@
+
+
+<div class="row">
+	
+	<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			
+			<%=form_for @gender do |f|%>
+            <%=f.label :name%>
+             <%=f.text_field :name, class:"form-control"%>
+             <%=f.label :gender_image%>
+             <%=f.file_field :gender_image, class:"form-control"%><br>
+              <%=f.submit "Add Category",class:"btn btn-success"%>
+                 <%end%>
+
+		</div>
+			<div class="col-sm-3"></div>
+</div>
