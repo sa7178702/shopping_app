@@ -45,7 +45,7 @@ class ClothesController < ApplicationController
 
 	private
 	def clothe_params
-		params.require(:clothe).permit(:name, :size, :price, :quantity, :brand, :gender_image)
+		params.require(:clothe).permit(:c_name, :size, :price, :quantity, :brand, :gender_image)
 	end
 
 	def find_gender
