@@ -13,44 +13,40 @@
 <div class="container">
 	<div class="row"style="margin: 20px;">
 		<div class="col-sm-3"></div>
-			<div class="col-sm-6 a">
-				
+			<div class="col-sm-6 a">	
 				<%=form_with model: [ @gender, @gender.clothes.new ] do |form| %>
-
-        <% if @gender.errors.any? %>
+            <% if @gender.errors.any? %>
                <div id="error_explanation">
-                <h2><%= pluralize(@gender.errors.count, "error") %> prohibited this article from being saved:</h2>
-                 <ul>
-                   <% @gender.errors.each do |error| %>
-                  <li><%= error.full_message %></li>
-              <% end %>
-               </ul>
-               < /div>
-              <% end %>
+                  <h2><%= pluralize(@gender.errors.count, "error") %> prohibited this article from being saved:</h2>
+                  <ul>
+                     <% @gender.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                     <% end %>
+                  </ul>
+               </div>
+             <% end %>
 
-                         <%=form.label :name %>
-                         <%= form.text_field :name ,class:"form-control "%>
-  
-                          <%=form.label :size %>  
-                           <%= form.text_field :size ,class:"form-control "%>
+          <%=form.label :name %>
+          <%= form.text_field :name ,class:"form-control "%>
 
-                           <%=form.label :price%>  
-                           <%=form.text_field :price,class:"form-control"%>
+          <%=form.label :size %>  
+          <%= form.text_field :size ,class:"form-control "%>
 
-                             <%=form.label :brand%>  
-                           <%=form.text_field :brand,class:"form-control"%>
+          <%=form.label :price%>  
+          <%=form.text_field :price,class:"form-control"%>
 
-                           <%=form.label :quantity%>  
-                           <%=form.text_field :quantity, class:"form-control"%>
+          <%=form.label :brand%>  
+          <%=form.text_field :brand,class:"form-control"%>
 
-                            <%=form.label :gender_image%>
-                            <%=form.file_field :gender_image, class:"form-control"%><br>
-  
-                           <%=form.submit "Add Clothes",class:"btn btn-info mb-4"%>
-                           
-                        <% end %>
+          <%=form.label :quantity%>  
+          <%=form.text_field :quantity, class:"form-control"%>
 
+          <%=form.label :gender_image%>
+          <%=form.file_field :gender_image, class:"form-control"%><br>
 
+          <%=form.submit "Add Clothes",class:"btn btn-info mb-4"%>
+           
+        <% end %>
 
 			</div>
 				<div class="col-sm-3"></div>

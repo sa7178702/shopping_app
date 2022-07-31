@@ -6,56 +6,52 @@
 </style>
 
 
-<di class="container"style="background: #EEEEEE;">
+<div class="container"style="background: #EEEEEE;">
 <div class="row" style="margin: 5px;">
 	<div class="col-sm-3">
 		<%=link_to "Add Clothes ",new_gender_clothe_path(@gender),class:"btn btn-success"%>
-
 	</div>
 	<div class="col-sm-9">
 		<h2><%=@gender.name%></h2>
 	</div>
 </div>
-</di>
+</div>
 
 <div class="row">
 	<div class="col-sm-6">
 		</div>
 	</div>
-</div>
 
 
  
 
-
 <div class="container">
   <div class="row">
-     <%@gender.clothes.each do |clothe|%>
+    <%@gender.clothes.each do |clothe|%>
     <div class="col-sm-6">
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4 mt-5">
-      <%=image_tag(clothe.gender_image) if clothe.gender_image.attached?%>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <p class="card-title"><b>Clothe Name :  </b><%=clothe.name%></p>
-         <p class="card-text"><b>Clothe Size:  </b><%=clothe.size%></p>
-         <p class="card-text"><b>Clothe Price :  </b><%=clothe.price%></p>
-          <p class="card-text"><b>Clothe Brand :  </b><%=clothe.brand%></p>
-           <p class="card-text"><b>Clothe Quantity:  </b><%=clothe.quantity%></p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-         <td><%=link_to "Show", gender_clothe_path(gender_id: @gender.id,id: clothe.id),class:"btn btn-info"%></td>
-         <td><%=link_to "Edit", edit_gender_clothe_path(gender_id: @gender.id,id: clothe.id),class:"btn btn-info"%></td>
-           <td><%=link_to "Delete",gender_clothe_path(gender_id: @gender.id, id: clothe.id),data: {turbo_method: :delete ,turbo_confirm:"Are You Soure ?"},class:"btn btn-danger"%></td>
-
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4 mt-5">
+          <%=image_tag(clothe.gender_image) if clothe.gender_image.attached?%>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <p class="card-title"><b>Clothe Name :  </b><%=clothe.name%></p>
+              <p class="card-text"><b>Clothe Size:  </b><%=clothe.size%></p>
+              <p class="card-text"><b>Clothe Price :  </b><%=clothe.price%></p>
+              <p class="card-text"><b>Clothe Brand :  </b><%=clothe.brand%></p>
+              <p class="card-text"><b>Clothe Quantity:  </b><%=clothe.quantity%></p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <td><%=link_to "Show", gender_clothe_path(gender_id: @gender.id,id: clothe.id),class:"btn btn-info"%></td>
+              <td><%=link_to "Edit", edit_gender_clothe_path(gender_id: @gender.id,id: clothe.id),class:"btn btn-info"%></td>
+              <td><%=link_to "Delete",gender_clothe_path(gender_id: @gender.id, id: clothe.id),data: {turbo_method: :delete ,turbo_confirm:"Are You Soure ?"},class:"btn btn-danger"%></td>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <%end%>
   </div>
-</div>
-</div>
-<%end%>
-</div>
 </div>
 
 

@@ -1,13 +1,11 @@
 class GendersController < ApplicationController
 
 	def new 
-		@gender=Gender.new
-
+		@gender = Gender.new
 	end
 
-
 	def create
-		@gender=Gender.new(gen_params)
+		@gender = Gender.new(gen_params)
 		if @gender.save
 			redirect_to dashboard_index_path
 		else
@@ -16,17 +14,15 @@ class GendersController < ApplicationController
 	end
 
 	def show
-		@gender=Gender.find_by(id: params[:id])
-
+		@gender = Gender.find_by(params[:id])
 	end
 
-		def edit
-		@gender=Gender.find_by(id: params[:id])
-
-	end
+	def edit
+	@gender = Gender.find_by(params[:id])
+    end
 	
 	def update
-			@gender=Gender.find_by(id: params[:id])
+			@gender = Gender.find_by(params[:id])
 		if @gender.update(gen_params)
 			redirect_to dashboard_index_path
 		else
@@ -36,16 +32,17 @@ class GendersController < ApplicationController
 
 
 	def destroy
-		@gender=Gender.find_by(id: params[:id])
+		@gender = Gender.find_by(params[:id])
 		if @gender.destroy
 			redirect_to dashboard_index_path
 		end
 	end
 
-private
+ private
+
 	def gen_params
 		params.require(:gender).permit(:name,:gender_image)
-		end
+	end
 
 
 end

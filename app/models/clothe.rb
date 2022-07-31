@@ -5,6 +5,4 @@ class Clothe < ApplicationRecord
  validates :name, presence: true
   validates :size, :length => { :maximum => 3 }
 
-
-
 end
